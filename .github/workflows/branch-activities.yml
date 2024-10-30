@@ -1,0 +1,14 @@
+name: Weekly Branch Activity Check
+
+
+on:
+  workflow_dispatch:
+  schedule:
+    # run eevery hour
+    - cron: '0 * * * *'
+
+jobs:
+  call_the_job:
+    uses: jerrybowang/GitHub-action-playground/.github/workflows/branch-activities.yml@main
+    secrets:
+      passed_github_token: ${{ secrets.GITHUB_TOKEN }}
